@@ -5,7 +5,6 @@ export interface ListCoffeesProps {
   price: number
   image: string
   tags: string[]
-  quantity: number
 }
 
 const COFFEE_IMG_PATH = '../public/Coffes'
@@ -35,7 +34,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Expresso_Tradicional,
     tags: ['tradicional'],
-    quantity: 1,
   },
   {
     id: 2,
@@ -44,7 +42,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Expresso_Americano,
     tags: ['tradicional'],
-    quantity: 1,
   },
   {
     id: 3,
@@ -53,7 +50,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Expresso_Cremoso,
     tags: ['tradicional'],
-    quantity: 1,
   },
   {
     id: 4,
@@ -62,7 +58,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Expresso_Gelado,
     tags: ['tradicional', 'gelado'],
-    quantity: 1,
   },
   {
     id: 5,
@@ -71,7 +66,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Café_com_Leite,
     tags: ['tradicional', 'com leite'],
-    quantity: 1,
   },
   {
     id: 6,
@@ -81,7 +75,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Latte,
     tags: ['tradicional', 'com leite'],
-    quantity: 1,
   },
   {
     id: 7,
@@ -91,7 +84,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Capuccino,
     tags: ['tradicional', 'com leite'],
-    quantity: 1,
   },
   {
     id: 8,
@@ -101,7 +93,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Macchiato,
     tags: ['tradicional', 'com leite'],
-    quantity: 1,
   },
   {
     id: 9,
@@ -110,7 +101,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Mocaccino,
     tags: ['tradicional', 'com leite'],
-    quantity: 1,
   },
   {
     id: 10,
@@ -119,7 +109,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Chocolate_Quente,
     tags: ['especial', 'com leite'],
-    quantity: 1,
   },
   {
     id: 11,
@@ -129,7 +118,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Cubano,
     tags: ['especial', 'alcoólico', 'gelado'],
-    quantity: 1,
   },
   {
     id: 12,
@@ -138,7 +126,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Havaiano,
     tags: ['especial'],
-    quantity: 1,
   },
   {
     id: 13,
@@ -147,7 +134,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Árabe,
     tags: ['especial'],
-    quantity: 1,
   },
   {
     id: 14,
@@ -156,7 +142,6 @@ export const ListCoffees: ListCoffeesProps[] = [
     price: 9.9,
     image: COFFEE_IMAGES.Irlandês,
     tags: ['especial', 'alcoólico'],
-    quantity: 1,
   },
 ]
 
