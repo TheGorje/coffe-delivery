@@ -1,16 +1,21 @@
-import { Header } from './Components/Header'
+import { Header } from './Components/Header/Header'
+import { FormProvider } from './Contexts/CheckoutFormContext'
+import { DataProvider } from './Contexts/LocalStorageContext'
 import { RouterContextProvider } from './Contexts/RouterContext'
 import './Global.css'
 import { DefaultLayout } from './Layout/Default'
 
 export function App() {
   return (
-    <div className="w-full max-w-screen-2xl place-self-center">
-      <Header />
-
-      <RouterContextProvider>
-        <DefaultLayout /> {/* gerencias as rotas */}
-      </RouterContextProvider>
+    <div className="flex w-full flex-col">
+      <DataProvider>
+        <RouterContextProvider>
+          <FormProvider>
+            <Header />
+            <DefaultLayout /> {/* gerencias as rotas */}
+          </FormProvider>
+        </RouterContextProvider>
+      </DataProvider>
     </div>
   )
 }
