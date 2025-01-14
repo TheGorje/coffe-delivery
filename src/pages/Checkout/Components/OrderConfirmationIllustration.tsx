@@ -1,6 +1,6 @@
-import plant from '../../../../public/SuccessIllustration/plant.svg'
-import biker from '../../../../public/SuccessIllustration/biker.svg'
-import trail from '../../../../public/SuccessIllustration/trail.svg'
+import plant from '../../../assets/SuccessIllustration/plant.svg'
+import biker from '../../../assets/SuccessIllustration/biker.svg'
+import trail from '../../../assets/SuccessIllustration/trail.svg'
 
 export function OrderConfirmationIllustration() {
   return (
@@ -15,7 +15,7 @@ export function OrderConfirmationIllustration() {
           <img
             src={biker}
             alt="motoby em cima da moto com entrega"
-            className="biker-animation-loop"
+            className="biker-animation-loop max-w-[100px] smaller:max-w-[150px] sm:max-w-[200px]"
           />
         </div>
         <img

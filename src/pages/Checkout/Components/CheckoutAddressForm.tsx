@@ -65,7 +65,7 @@ export function CheckoutAddressForm() {
         />
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 smaller:flex-row">
         <div>
           <input
             type="text"
@@ -100,7 +100,7 @@ export function CheckoutAddressForm() {
         </div>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 smaller:flex-row">
         <input
           type="text"
           id="bairro"

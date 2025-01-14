@@ -39,7 +39,7 @@ export function PaymentMethod() {
           </div>
         </section>
 
-        <section className="flex gap-3">
+        <section className="flex flex-col gap-3 smaller:flex-row">
           <button
             onClick={() => handleUpdatePaymentMethod('cartão de crédito')}
             className={`${paymentMethod === 'cartão de crédito' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] transition-colors duration-150 hover:bg-base-hover`}

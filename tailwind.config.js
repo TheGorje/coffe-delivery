@@ -3,6 +3,7 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: { smaller: '420px' },
       fontFamily: {
         title: ["'Baloo 2'", 'sans-serif'],
         text: ["'Roboto'", 'sans-serif'],

@@ -31,7 +31,7 @@ export function CoffeeList() {
         <h2 className="font-title text-title-l font-bold text-base-subtitle">
           Nossos Cafés
         </h2>
-        <div className="flex flex-nowrap justify-center gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
           {allTags.map((item) => {
             return (
               <button
@@ -52,7 +52,7 @@ export function CoffeeList() {
       </div>
 
       <div
-        className="mt-[3.375rem] grid justify-center gap-8"
+        className="mt-[3.375rem] grid justify-center justify-items-center gap-8"
         style={{ gridTemplateColumns: 'repeat(auto-fill, 256px)' }}
       >
         {filterTag.length >= 1

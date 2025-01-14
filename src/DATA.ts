@@ -1,3 +1,18 @@
+import ExpressoTradicional from '../src/assets/Coffees/Expresso_Tradicional.svg'
+import ExpressoAmericano from '../src/assets/Coffees/Expresso_Americano.svg'
+import ExpressoCremoso from '../src/assets/Coffees/Expresso_Cremoso.svg'
+import ExpressoGelado from '../src/assets/Coffees/Expresso_Gelado.svg'
+import CafeComLeite from '../src/assets/Coffees/Café_com_Leite.svg'
+import Latte from '../src/assets/Coffees/Latte.svg'
+import Capuccino from '../src/assets/Coffees/Capuccino.svg'
+import Macchiato from '../src/assets/Coffees/Macchiato.svg'
+import Mocaccino from '../src/assets/Coffees/Mocaccino.svg'
+import ChocolateQuente from '../src/assets/Coffees/Chocolate_Quente.svg'
+import Cubano from '../src/assets/Coffees/Cubano.svg'
+import Havaiano from '../src/assets/Coffees/Havaiano.svg'
+import Arabe from '../src/assets/Coffees/Árabe.svg'
+import Irlandes from '../src/assets/Coffees/Irlandês.svg'
+
 export interface ListCoffeesProps {
   id: number
   name: string
@@ -7,32 +22,13 @@ export interface ListCoffeesProps {
   tags: string[]
 }
 
-const COFFEE_IMG_PATH = '../public/Coffes'
-
-const COFFEE_IMAGES: { [key: string]: string } = {
-  Expresso_Tradicional: `${COFFEE_IMG_PATH}/Expresso_Tradicional.svg`,
-  Expresso_Americano: `${COFFEE_IMG_PATH}/Expresso_Americano.svg`,
-  Expresso_Cremoso: `${COFFEE_IMG_PATH}/Expresso_Cremoso.svg`,
-  Expresso_Gelado: `${COFFEE_IMG_PATH}/Expresso_Gelado.svg`,
-  Café_com_Leite: `${COFFEE_IMG_PATH}/Café_com_Leite.svg`,
-  Latte: `${COFFEE_IMG_PATH}/Latte.svg`,
-  Capuccino: `${COFFEE_IMG_PATH}/Capuccino.svg`,
-  Macchiato: `${COFFEE_IMG_PATH}/Macchiato.svg`,
-  Mocaccino: `${COFFEE_IMG_PATH}/Mocaccino.svg`,
-  Chocolate_Quente: `${COFFEE_IMG_PATH}/Chocolate_Quente.svg`,
-  Cubano: `${COFFEE_IMG_PATH}/Cubano.svg`,
-  Havaiano: `${COFFEE_IMG_PATH}/Havaiano.svg`,
-  Árabe: `${COFFEE_IMG_PATH}/Árabe.svg`,
-  Irlandês: `${COFFEE_IMG_PATH}/Irlandês.svg`,
-}
-
 export const ListCoffees: ListCoffeesProps[] = [
   {
     id: 1,
     name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
     price: 9.9,
-    image: COFFEE_IMAGES.Expresso_Tradicional,
+    image: ExpressoTradicional,
     tags: ['tradicional'],
   },
   {
@@ -40,7 +36,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Expresso Americano',
     description: 'Café com leite vaporizado e uma leve camada de espuma.',
     price: 9.9,
-    image: COFFEE_IMAGES.Expresso_Americano,
+    image: ExpressoAmericano,
     tags: ['tradicional'],
   },
   {
@@ -48,7 +44,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Expresso Cremoso',
     description: 'Café expresso tradicional com espuma cremosa.',
     price: 9.9,
-    image: COFFEE_IMAGES.Expresso_Cremoso,
+    image: ExpressoCremoso,
     tags: ['tradicional'],
   },
   {
@@ -56,7 +52,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Expresso Gelado',
     description: 'Bebida preparada com café expresso e cubos de gelo',
     price: 9.9,
-    image: COFFEE_IMAGES.Expresso_Gelado,
+    image: ExpressoGelado,
     tags: ['tradicional', 'gelado'],
   },
   {
@@ -64,7 +60,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Café com Leite',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
     price: 9.9,
-    image: COFFEE_IMAGES.Café_com_Leite,
+    image: CafeComLeite,
     tags: ['tradicional', 'com leite'],
   },
   {
@@ -73,7 +69,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     description:
       'Uma dose de café expresso com o dobro de leite e espuma cremosa',
     price: 9.9,
-    image: COFFEE_IMAGES.Latte,
+    image: Latte,
     tags: ['tradicional', 'com leite'],
   },
   {
@@ -82,7 +78,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     description:
       'Bebida com canela feita de doses iguais de café, leite e espuma',
     price: 9.9,
-    image: COFFEE_IMAGES.Capuccino,
+    image: Capuccino,
     tags: ['tradicional', 'com leite'],
   },
   {
@@ -91,7 +87,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     description:
       'Café expresso misturado com um pouco de leite quente e espuma',
     price: 9.9,
-    image: COFFEE_IMAGES.Macchiato,
+    image: Macchiato,
     tags: ['tradicional', 'com leite'],
   },
   {
@@ -99,7 +95,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Mocaccino',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
     price: 9.9,
-    image: COFFEE_IMAGES.Mocaccino,
+    image: Mocaccino,
     tags: ['tradicional', 'com leite'],
   },
   {
@@ -107,7 +103,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Chocolate Quente',
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
     price: 9.9,
-    image: COFFEE_IMAGES.Chocolate_Quente,
+    image: ChocolateQuente,
     tags: ['especial', 'com leite'],
   },
   {
@@ -116,7 +112,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     description:
       'Drink gelado de café expresso com rum, creme de leite e hortelã',
     price: 9.9,
-    image: COFFEE_IMAGES.Cubano,
+    image: Cubano,
     tags: ['especial', 'alcoólico', 'gelado'],
   },
   {
@@ -124,7 +120,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Havaiano',
     description: 'Bebida adocicada preparada com café e leite de coco',
     price: 9.9,
-    image: COFFEE_IMAGES.Havaiano,
+    image: Havaiano,
     tags: ['especial'],
   },
   {
@@ -132,7 +128,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Árabe',
     description: 'Bebida preparada com grãos de café árabe e especiarias',
     price: 9.9,
-    image: COFFEE_IMAGES.Árabe,
+    image: Arabe,
     tags: ['especial'],
   },
   {
@@ -140,7 +136,7 @@ export const ListCoffees: ListCoffeesProps[] = [
     name: 'Irlandês',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
     price: 9.9,
-    image: COFFEE_IMAGES.Irlandês,
+    image: Irlandes,
     tags: ['especial', 'alcoólico'],
   },
 ]

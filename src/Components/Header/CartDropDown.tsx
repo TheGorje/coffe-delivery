@@ -22,7 +22,7 @@ export function CartDropDown({ handleCollapseCart }: HeaderCarProps) {
   }
 
   return (
-    <div className="absolute right-0 top-20 p-10">
+    <div className="absolute right-0 top-32 px-2 smaller:px-20">
       {/* <div
         className="animation-in-opacity fixed left-0 top-0 z-20 size-full bg-black opacity-20"
         onClick={handleCollapseCart}

@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Defina o valor base de rem para a largura padrão (exemplo: 16px) */
+html {
+  font-size: 16px;
+}
+
+/* Ajuste o valor de rem para telas menores que 500px */
+@media (max-width: 640px) {
+  html {
+    font-size: 13px;
+    /* ou qualquer valor menor que você achar apropriado */
+  }
+}
+
+
 @layer utilities {
   .border-gradient {
     position: relative;
@@ -98,6 +112,7 @@ body {
 .hue-rotation-infinite {
   animation: hueRotation 5s ease-in-out infinite;
 }
+
 @keyframes hueRotation {
   0% {
     filter: hue-rotate(0deg);
@@ -108,9 +123,9 @@ body {
   }
 }
 
- /* success */
+/* success */
 .plant-animation-loop {
-  animation: ContinuousMotion 2s ease-in-out infinite;
+  animation: ContinuousMotion 2s ease infinite;
   position: absolute;
   bottom: 0;
   z-index: 10;
@@ -118,31 +133,34 @@ body {
 
 @keyframes ContinuousMotion {
   0% {
-    transform: translateX(80vw);
+    transform: translateX(100vw);
   }
 
   100% {
-    transform: translateX(-80vw);
+    transform: translateX(-100vw);
   }
 }
 
 .biker-animation-loop {
-  animation: MotionHorizon 4s cubic-bezier(0.83, -0.16, 0.58, 1) infinite;
+  animation: SpeedMotion 0.15s infinite;
 }
 
-@keyframes MotionHorizon {
+@keyframes SpeedMotion {
   0% {
-    transform: translateX(10px);
+    transform: translateY(0px);
   }
 
-  50% {
-    transform: translateX(-10px);
+  30% {
+    transform: translateY(1px);
+
   }
 
   100% {
-    transform: translateX(10px);
+    transform: translateY(0px);
   }
+
 }
+
 
 .trail-animation-loop {
   animation: TrailMotion 4s ease-in-out infinite;
@@ -165,5 +183,4 @@ body {
     transform: translateX(30px);
     opacity: 0;
   }
-
 }

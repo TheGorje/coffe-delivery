@@ -33,7 +33,7 @@ export function IntroSection() {
       <main className="flex size-full items-center">
         <section className="flex size-full flex-col items-center justify-evenly px-4 text-center md:px-16 xl:items-start xl:text-justify">
           <div>
-            <h1 className="font-title text-title-xl text-base-title">
+            <h1 className="font-title text-title-l text-base-title smaller:text-title-xl">
               Encontre o café perfeito para qualquer hora do dia
             </h1>
             <br />
@@ -43,7 +43,7 @@ export function IntroSection() {
             </h6>
           </div>
 
-          <div className="flex gap-6 md:gap-10">
+          <div className="flex flex-col gap-6 sm:flex-row md:gap-10">
             <section className="flex flex-col gap-5">
               <ItemSection
                 text="Compra simples e segura"

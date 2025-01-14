@@ -54,7 +54,7 @@ export function CartCoffeeList() {
                 <img
                   src={coffe.image}
                   alt="imagem de cima do café especificado"
-                  className="size-16"
+                  className="hidden size-16 smaller:block"
                 />
 
                 <div className="flex flex-col gap-2">
