@@ -16,7 +16,7 @@ export const RouterContext = createContext({} as RouterContextType)
 export function RouterContextProvider({
   children,
 }: RouterContextProviderProps) {
-  const [router, setRouter] = useState<RouterPaths>('checkout')
+  const [router, setRouter] = useState<RouterPaths>('home')
 
   const handleChangeRouter = (newRouter: RouterPaths) => {
     setRouter(newRouter)
