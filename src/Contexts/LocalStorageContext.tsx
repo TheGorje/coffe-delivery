@@ -7,6 +7,11 @@ import {
 } from 'react'
 import { ListCoffeesProps } from '../DATA'
 
+export type PaymentMethod =
+  | 'cartão de crédito'
+  | 'cartão de debito'
+  | 'dinheiro'
+
 export interface CartProps {
   coffeeData: ListCoffeesProps
   quantity: number
@@ -23,20 +28,31 @@ type DataState = {
     uf?: string
   }
   cart: CartProps[] // definição do carrinho oq recebe
+  paymentMethod: PaymentMethod
 }
 
 export type DataContextType = {
   data: DataState
   setAddress: (address: DataState['address']) => void
   setCart: (cart: CartProps[]) => void
+  setPayment: (paymentMethod: PaymentMethod) => void
 }
 
 export const DataContext = createContext<DataContextType | undefined>(undefined)
 
 export function DataProvider({ children }: { children: ReactNode }) {
   const initialData: DataState = {
-    address: {},
+    address: {
+      cep: '',
+      rua: '',
+      numero: '',
+      complemento: undefined,
+      bairro: '',
+      cidade: '',
+      uf: '',
+    },
     cart: [],
+    paymentMethod: 'dinheiro', // Mudança: inicializado diretamente como string,
   }
 
   const [data, setData] = useState<DataState>(() => {
@@ -63,8 +79,15 @@ export function DataProvider({ children }: { children: ReactNode }) {
     }))
   }
 
+  const setPayment = (paymentMethod: PaymentMethod) => {
+    setData((prevState) => ({
+      ...prevState,
+      paymentMethod,
+    }))
+  }
+
   return (
-    <DataContext.Provider value={{ data, setAddress, setCart }}>
+    <DataContext.Provider value={{ data, setAddress, setCart, setPayment }}>
       {children}
     </DataContext.Provider>
   )

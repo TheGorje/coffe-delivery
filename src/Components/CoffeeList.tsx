@@ -1,8 +1,27 @@
 import { CoffeeCard } from './CoffeeCard'
 import { allTags, ListCoffees, ListCoffeesProps } from '../DATA'
+import { useCart } from '../Contexts/CartContext'
+import { useState } from 'react'
 
 export function CoffeeList() {
   const countAllTags = allTags.length
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { setQuantity } = useCart()
+  const [filterTag, setFilterTag] = useState('')
+  const filteredList = ListCoffees.filter((item) =>
+    item.tags.includes(filterTag)
+  )
+
+  function handleSetQuantity(
+    coffeeData: ListCoffeesProps,
+    quantity: number = 1
+  ) {
+    setQuantity(coffeeData, quantity)
+  }
+
+  function handleFilterSetTag(tag: string) {
+    return filterTag === tag ? setFilterTag('') : setFilterTag(tag)
+  }
 
   return (
     <section className="w-full p-6 lg:px-40">
@@ -17,7 +36,13 @@ export function CoffeeList() {
             return (
               <button
                 key={item}
+                onClick={() => handleFilterSetTag(item)}
                 className="rounded-full border border-yellow px-3 py-1.5 text-tag uppercase text-yellow-dark transition-colors duration-200 hover:bg-yellow-light"
+                style={{
+                  backgroundColor:
+                    filterTag === item ? 'var(--yellow-light)' : undefined,
+                  boxShadow: filterTag === item ? 'none' : undefined,
+                }}
               >
                 {item}
               </button>
@@ -30,9 +55,25 @@ export function CoffeeList() {
         className="mt-[3.375rem] grid justify-center gap-8"
         style={{ gridTemplateColumns: 'repeat(auto-fill, 256px)' }}
       >
-        {ListCoffees.map((Coffee: ListCoffeesProps) => {
-          return <CoffeeCard key={Coffee.id} CoffeeData={Coffee} />
-        })}
+        {filterTag.length >= 1
+          ? filteredList.map((Coffee: ListCoffeesProps) => {
+              return (
+                <CoffeeCard
+                  key={Coffee.id}
+                  coffeeData={Coffee}
+                  handleSetQuantity={handleSetQuantity}
+                />
+              )
+            })
+          : ListCoffees.map((Coffee: ListCoffeesProps) => {
+              return (
+                <CoffeeCard
+                  key={Coffee.id}
+                  coffeeData={Coffee}
+                  handleSetQuantity={handleSetQuantity}
+                />
+              )
+            })}
       </div>
     </section>
   )

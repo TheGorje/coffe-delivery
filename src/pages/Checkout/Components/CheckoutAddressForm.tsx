@@ -42,6 +42,7 @@ export function CheckoutAddressForm() {
           id="cep"
           name="cep"
           placeholder="CEP"
+          title="CEP"
           autoComplete="off"
           value={formData.cep || ''}
           onChange={handleChange}
@@ -56,6 +57,7 @@ export function CheckoutAddressForm() {
           id="rua"
           name="rua"
           placeholder="Rua"
+          title="Rua"
           autoComplete="off"
           value={formData.rua || ''}
           onChange={handleChange}
@@ -70,6 +72,7 @@ export function CheckoutAddressForm() {
             id="numero"
             name="numero"
             placeholder="Número"
+            title="Número"
             autoComplete="off"
             value={formData.numero || ''}
             onChange={handleChange}
@@ -88,6 +91,7 @@ export function CheckoutAddressForm() {
             id="complemento"
             name="complemento"
             placeholder="Complemento"
+            title="Complemento opcional"
             autoComplete="off"
             value={formData.complemento || ''}
             onChange={handleChange}
@@ -97,42 +101,39 @@ export function CheckoutAddressForm() {
       </div>
 
       <div className="flex gap-3">
-        <div>
-          <input
-            type="text"
-            id="bairro"
-            name="bairro"
-            placeholder="Bairro"
-            autoComplete="off"
-            value={formData.bairro || ''}
-            onChange={handleChange}
-            className={`${errors.bairro && 'border-red-500'} rounded border border-base-button bg-base-input p-3 text-text-s text-base-text`}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            id="cidade"
-            name="cidade"
-            placeholder="Cidade"
-            autoComplete="off"
-            value={formData.cidade || ''}
-            onChange={handleChange}
-            className={`${errors.cidade && 'border-red-500'} rounded border border-base-button bg-base-input p-3 text-text-s text-base-text`}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            id="uf"
-            name="uf"
-            placeholder="UF"
-            autoComplete="off"
-            value={formData.uf || ''}
-            onChange={handleChange}
-            className={`${errors.uf && 'border-red-500'} rounded border border-base-button bg-base-input p-3 text-text-s uppercase text-base-text`}
-          />
-        </div>
+        <input
+          type="text"
+          id="bairro"
+          name="bairro"
+          placeholder="Bairro"
+          title="Bairro"
+          autoComplete="off"
+          value={formData.bairro || ''}
+          onChange={handleChange}
+          className={`${errors.bairro && 'border-red-500'} rounded border border-base-button bg-base-input p-3 text-text-s text-base-text`}
+        />
+        <input
+          type="text"
+          id="cidade"
+          name="cidade"
+          placeholder="Cidade"
+          title="Cidade"
+          autoComplete="off"
+          value={formData.cidade || ''}
+          onChange={handleChange}
+          className={`${errors.cidade && 'border-red-500'} w-full rounded border border-base-button bg-base-input p-3 text-text-s text-base-text`}
+        />
+        <input
+          type="text"
+          id="uf"
+          name="uf"
+          placeholder="UF"
+          title="UF"
+          autoComplete="off"
+          value={formData.uf || ''}
+          onChange={handleChange}
+          className={`${errors.uf && 'border-red-500'} w-[3.75rem] rounded border border-base-button bg-base-input p-3 text-text-s uppercase text-base-text`}
+        />
       </div>
     </form>
   )

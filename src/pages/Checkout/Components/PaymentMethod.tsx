@@ -1,19 +1,28 @@
 import { CreditCard, CurrencyDollar, Bank, Money } from 'phosphor-react'
-import { useState } from 'react'
-interface PaymentMethodProps {
-  paymentMethod: 'cartão de crédito' | 'cartão de debito' | 'dinheiro'
-}
+import { useEffect, useState } from 'react'
+import {
+  type PaymentMethod,
+  useDataContext,
+} from '../../../Contexts/LocalStorageContext'
 
 export function PaymentMethod() {
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethodProps>({
-    paymentMethod: 'dinheiro', // metodo de pagamento padrao
-  })
+  const { data, setPayment } = useDataContext()
 
-  const handleUpdatePaymentMethod = (
-    method: PaymentMethodProps['paymentMethod']
-  ) => {
-    setPaymentMethod({ paymentMethod: method })
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>(
+    data.paymentMethod || 'dinheiro' // metodo de pagamento padrao
+  )
+
+  const handleUpdatePaymentMethod = (method: PaymentMethod) => {
+    setPaymentMethod(method)
   }
+
+  useEffect(() => {
+    if (paymentMethod === data.paymentMethod) {
+      return
+    }
+
+    return setPayment(paymentMethod)
+  }, [data.paymentMethod, paymentMethod, setPayment])
 
   return (
     <section className="flex flex-col gap-8 rounded-md bg-base-card p-10">
@@ -33,26 +42,30 @@ export function PaymentMethod() {
         <section className="flex gap-3">
           <button
             onClick={() => handleUpdatePaymentMethod('cartão de crédito')}
-            className={`${paymentMethod.paymentMethod === 'cartão de crédito' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] text-button-m uppercase text-base-text transition-colors duration-150 hover:bg-base-hover`}
+            className={`${paymentMethod === 'cartão de crédito' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] transition-colors duration-150 hover:bg-base-hover`}
           >
             <CreditCard size={16} color="var(--purple)" />
-            CARTÃO DE CRÉDITO
+            <p className="text-button-m uppercase text-base-text">
+              CARTÃO DE CRÉDITO
+            </p>
           </button>
 
           <button
             onClick={() => handleUpdatePaymentMethod('cartão de debito')}
-            className={`${paymentMethod.paymentMethod === 'cartão de debito' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] text-button-m uppercase text-base-text transition-colors duration-150 hover:bg-base-hover`}
+            className={`${paymentMethod === 'cartão de debito' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] transition-colors duration-150 hover:bg-base-hover`}
           >
             <Bank size={16} color="var(--purple)" />
-            CARTÃO DE DEBITO
+            <p className="text-button-m uppercase text-base-text">
+              CARTÃO DE DEBITO
+            </p>
           </button>
 
           <button
             onClick={() => handleUpdatePaymentMethod('dinheiro')}
-            className={`${paymentMethod.paymentMethod === 'dinheiro' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] text-button-m uppercase text-base-text transition-colors duration-150 hover:bg-base-hover`}
+            className={`${paymentMethod === 'dinheiro' && 'border border-purple bg-purple-light focus-within:shadow-none hover:bg-purple-light'} flex h-12 w-full items-center justify-start gap-[0.938rem] rounded bg-base-button px-4 py-[1.094rem] transition-colors duration-150 hover:bg-base-hover`}
           >
             <Money size={16} color="var(--purple)" />
-            DINHEIRO
+            <p className="text-button-m uppercase text-base-text">DINHEIRO</p>
           </button>
         </section>
       </div>

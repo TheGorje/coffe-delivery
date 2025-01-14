@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .border-gradient {
+    position: relative;
+    padding: 1px;
+    border-radius: 0.25rem;
+    border-bottom-left-radius: 2.25rem;
+    /* 36px */
+    border-top-right-radius: 2.25rem;
+    /* 36px */
+    overflow: hidden;
+  }
+
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    /* Ajuste conforme necessário */
+    left: -4px;
+    /* Ajuste conforme necessário */
+    right: -4px;
+    /* Ajuste conforme necessário */
+    bottom: -4px;
+    /* Ajuste conforme necessário */
+    background: linear-gradient(to bottom right, var(--yellow), var(--purple));
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +41,7 @@
 
 :focus {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--yellow);
+  box-shadow: 0 0 0 2px var(--purple);
 }
 
 body {
@@ -39,7 +70,6 @@ body {
   --white: #ffffff;
 }
 
-
 .animation-in-opacity {
   animation: in-opacity 0.2s ease-in;
 }
@@ -62,4 +92,78 @@ body {
   to {
     transform: translateY(0);
   }
+}
+
+/* intro section */
+.hue-rotation-infinite {
+  animation: hueRotation 5s ease-in-out infinite;
+}
+@keyframes hueRotation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+ /* success */
+.plant-animation-loop {
+  animation: ContinuousMotion 2s ease-in-out infinite;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+
+@keyframes ContinuousMotion {
+  0% {
+    transform: translateX(80vw);
+  }
+
+  100% {
+    transform: translateX(-80vw);
+  }
+}
+
+.biker-animation-loop {
+  animation: MotionHorizon 4s cubic-bezier(0.83, -0.16, 0.58, 1) infinite;
+}
+
+@keyframes MotionHorizon {
+  0% {
+    transform: translateX(10px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.trail-animation-loop {
+  animation: TrailMotion 4s ease-in-out infinite;
+}
+
+
+@keyframes TrailMotion {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-10px);
+    transform: translatey(20px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
 }

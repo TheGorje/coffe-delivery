@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 import * as z from 'zod'
-import { DataContext, DataContextType, useDataContext } from './LocalStorageContext'
+import { useDataContext } from './LocalStorageContext'
 
 // Definindo o schema Zod
 const addressSchema = z.object({
@@ -29,7 +29,15 @@ export function FormProvider({ children }: { children: ReactNode }) {
   const addressSaveData = data.address // const savedData = localStorage.getItem('addressFormData')
 
   const [formData, setFormData] = useState<AddressFormData>(() => {
-    return addressSaveData || ({} as Partial<AddressFormData>)
+    return (addressSaveData || {
+      cep: '',
+      rua: '',
+      numero: '',
+      complemento: '',
+      bairro: '',
+      cidade: '',
+      uf: '',
+    }) as AddressFormData
   })
 
   const [errors, setErrors] = useState<Record<string, string>>({})

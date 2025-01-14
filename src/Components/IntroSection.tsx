@@ -14,7 +14,6 @@ export function IntroSection() {
       <div className="flex items-center gap-3">
         <div
           style={{ backgroundColor: color }}
-          // eslint-disable-next-line tailwindcss/no-custom-classname
           className="flex size-8 items-center justify-center rounded-full"
         >
           {icon}
@@ -29,7 +28,7 @@ export function IntroSection() {
       <img
         src={Background}
         alt="Background minimalist"
-        className="absolute inset-0 -z-10 size-full object-cover opacity-100 2xl:opacity-0"
+        className="hue-rotation-infinite absolute inset-0 -z-10 size-full object-cover opacity-100"
       />
       <main className="flex size-full items-center">
         <section className="flex size-full flex-col items-center justify-evenly px-4 text-center md:px-16 xl:items-start xl:text-justify">
@@ -78,7 +77,7 @@ export function IntroSection() {
           <img
             src={Coffe}
             alt="Cafe com um fundo amarelo"
-            className="lg:w-9/12"
+            className="max-w-2xl lg:w-9/12"
           />
         </section>
       </main>

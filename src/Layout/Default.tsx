@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import { RouterContext } from '../Contexts/RouterContext'
 import { Home } from '../pages/Home/Home'
-import { Checkount } from '../pages/Checkout/Checkout'
+import { Checkout } from '../pages/Checkout/Checkout'
+import { Success } from '../pages/Checkout/Success'
 
 export function DefaultLayout() {
   const context = useContext(RouterContext)
@@ -12,7 +13,9 @@ export function DefaultLayout() {
       case 'home':
         return <Home />
       case 'checkout':
-        return <Checkount />
+        return <Checkout />
+      case 'success':
+        return <Success />
       default:
         return <Home />
     }

@@ -3,7 +3,7 @@ import { IntroSection } from '../../Components/IntroSection'
 
 export function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex select-none flex-col">
       <IntroSection />
       <CoffeeList />
     </div>
