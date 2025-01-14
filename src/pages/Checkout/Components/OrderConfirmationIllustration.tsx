@@ -14,14 +14,14 @@ export function OrderConfirmationIllustration() {
           />
           <img
             src={biker}
-            alt="motoby em cima da moto com entrega"
+            alt="motoby em cima da moto"
             className="biker-animation-loop max-w-[100px] smaller:max-w-[150px] sm:max-w-[200px]"
           />
         </div>
         <img
           src={plant}
           alt="planta com movimento lateral"
-          className="plant-animation-loop size-24"
+          className="plant-animation-loop size-24 smaller:size-16 sm:size-20"
         />
       </div>
     </div>
