@@ -31,19 +31,23 @@
 - No desafio, foi fornecido um layout no Figma para que eu pudesse seguir e implementar todas as funcionalidades.
 - Design da Interface criada no Figma: [Millena Martins](https://www.linkedin.com/in/millenamartins/) Product Designer da RocketSeat.
 
-# Home
+## Home
 
-![Home](.github/Home.mp4)
+![Home](.github/Home.gif)
+#### Página inicial flexível.
 
-![Home](.github/CoffeList.mp4)
+![CoffeList](.github/CoffeList.gif)
+#### Lista de cafés, com funcionalidades de adicionar e remover cafés no carrinho, visualização dos valores e navegação para a próxima página.
 
-# Finalizar Compra
+## Finalizar Compra
 
-![Home](.github/Checkout.mp4)
+![Checkout](.github/Checkout.gif)
+#### Processo de checkout completo, incluindo formulários, opções de métodos de pagamento e finalização do pedido.
 
-![Home](.github/FormCep.mp4)
+![FormCep](.github/FormCep.gif)
+#### Sistema de preenchimento automático de endereço ao inserir o CEP.
 
-# Pedido Concluído
+## Pedido Concluído
 
-![Home](.github/Success.mp4)
-
+![Success](.github/Success.gif)
+#### Página final de confirmação do pedido concluído, feito em CSS com imagens estaticas.
