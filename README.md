@@ -34,12 +34,15 @@
 ## Home
 
 ![Home](.github/Home.gif)
-#### Página inicial flexível.
+#### Página inicial flexível
 
-![CoffeList](.github/CoffeList.gif)
-#### Lista de cafés, com funcionalidades de adicionar e remover cafés no carrinho, visualização dos valores e navegação para a próxima página.
+## Lista de Cafés
+
+![CoffeeList](.github/CoffeeList.gif)
+#### Lista de cafés, com funcionalidades de adicionar e remover cafés no carrinho, visualização e edição dos valores.
 
 ## Finalizar Compra
+
 
 ![Checkout](.github/Checkout.gif)
 #### Processo de checkout completo, incluindo formulários, opções de métodos de pagamento e finalização do pedido.
