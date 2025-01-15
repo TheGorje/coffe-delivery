@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# RocketSeat - Coffe Delivery
+- Uma aplicação de Cafeteria criada como parte de um curso de React da RocketSeat.
+- Você pode testar a aplicação aqui > [Coffe Delivery.io](https://thegorje.github.io/coffe-delivery/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Funcionalidades
 
-Currently, two official plugins are available:
+- Seleção de produtos de café
+- Ajuste de quantidades no carrinho
+- Adicionar e remover produtos no carrinho
+- Visualizar o carrinho com opções de ajustar quantidades e remover itens
+- Ver o total do preço dos itens no carrinho
+- Checkout com resumo do pedido
+- Inserção de endereço
+- Preenchimento automático do endereço ao inserir o CEP
+- Opções de pagamento: cartão ou dinheiro
+- Designer flexível
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Vite
+- tailwind
+- hookform
+- zod
+- immer
+- phosphor
 
-- Configure the top-level `parserOptions` property like this:
+### Interface da Aplicação
+- No desafio, foi fornecido um layout no Figma para que eu pudesse seguir e implementar todas as funcionalidades.
+- Design da Interface criada no Figma: [Millena Martins](https://www.linkedin.com/in/millenamartins/) Product Designer da RocketSeat.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# Home
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![Home](.github/Home.mp4)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![Home](.github/CoffeList.mp4)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Finalizar Compra
+
+![Home](.github/Checkout.mp4)
+
+![Home](.github/FormCep.mp4)
+
+# Pedido Concluído
+
+![Home](.github/Success.mp4)
+
